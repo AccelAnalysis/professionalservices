@@ -1,0 +1,1019 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Accel Analysis for Professional &amp; Technical Services</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="How Accel Analysis supports consultants, creatives, and professional practices with clearer positioning, ideal-client targeting, and simple pipelines." />
+
+  <style>
+    /* --- Base Reset & Typography --- */
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #f6f7fb;
+      color: #1a1a1a;
+    }
+
+    body {
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    /* --- Layout --- */
+    .container {
+      width: 100%;
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* --- Header & Navigation --- */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(6px);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.75rem 0;
+    }
+
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .nav-logo {
+      height: 48px;
+      width: auto;
+    }
+
+    .nav-brand-text {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: #555;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      font-size: 0.92rem;
+    }
+
+    .nav-link {
+      position: relative;
+      padding-bottom: 0.1rem;
+    }
+
+    .nav-link::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 2px;
+      background: #005b8f;
+      transition: width 0.2s ease-out;
+    }
+
+    .nav-link:hover::after {
+      width: 100%;
+    }
+
+    .nav-cta {
+      padding: 0.5rem 1rem;
+      border-radius: 999px;
+      border: 1px solid #005b8f;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #005b8f;
+      background: #ffffff;
+      transition: all 0.2s ease-out;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .nav-cta:hover {
+      background: #005b8f;
+      color: #ffffff;
+      box-shadow: 0 6px 18px rgba(0, 91, 143, 0.25);
+      transform: translateY(-1px);
+    }
+
+    /* --- Hero --- */
+    .hero {
+      position: relative;
+      min-height: 70vh;
+      display: flex;
+      align-items: center;
+      color: #ffffff;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image: url("https://img1.wsimg.com/isteam/ip/0815fdc9-aafc-4fe1-99f8-dedc9ba0e23b/blob-02576cc.png/:/rs=w:1440,h:1440");
+      background-size: cover;
+      background-position: center;
+      filter: brightness(0.35);
+      transform: scale(1.02);
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 10% 0%, rgba(0, 171, 193, 0.5) 0, transparent 60%),
+                  linear-gradient(120deg, rgba(0, 91, 143, 0.9), rgba(10, 31, 58, 0.9));
+      mix-blend-mode: soft-light;
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      padding: 4.5rem 0 4rem;
+    }
+
+    .hero-tagline {
+      font-size: 0.8rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #d3e9ff;
+      margin-bottom: 0.75rem;
+    }
+
+    .hero-title {
+      font-size: clamp(2.2rem, 4vw, 3rem);
+      line-height: 1.15;
+      font-weight: 700;
+      margin: 0 0 1rem;
+    }
+
+    .hero-accent {
+      color: #66d1ff;
+    }
+
+    .hero-subtitle {
+      max-width: 560px;
+      font-size: 1.02rem;
+      color: #e9f3ff;
+      margin-bottom: 1.75rem;
+    }
+
+    .hero-pill {
+      display: inline-flex;
+      flex-wrap: wrap;
+      gap: 0.3rem 0.85rem;
+      align-items: center;
+      margin-bottom: 1.75rem;
+      font-size: 0.9rem;
+      color: #c6ddff;
+    }
+
+    .hero-pill span {
+      position: relative;
+      padding-left: 1.3rem;
+    }
+
+    .hero-pill span::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: #66d1ff;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.85rem;
+      align-items: center;
+    }
+
+    .btn-primary {
+      padding: 0.75rem 1.7rem;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #00a3e0, #0073b6);
+      color: #ffffff;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      box-shadow: 0 10px 22px rgba(0, 134, 204, 0.45);
+      transition: transform 0.15s ease-out, box-shadow 0.15s ease-out, filter 0.15s ease-out;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      filter: brightness(1.05);
+      box-shadow: 0 14px 30px rgba(0, 134, 204, 0.6);
+    }
+
+    .btn-secondary {
+      padding: 0.75rem 1.5rem;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.08);
+      color: #e6f0ff;
+      font-weight: 500;
+      border: 1px solid rgba(230, 240, 255, 0.4);
+      cursor: pointer;
+      font-size: 0.9rem;
+      backdrop-filter: blur(8px);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      transition: background 0.15s ease-out, color 0.15s ease-out, transform 0.15s ease-out;
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.16);
+      color: #ffffff;
+      transform: translateY(-1px);
+    }
+
+    /* --- Sections --- */
+    main {
+      background: #f6f7fb;
+    }
+
+    .section {
+      padding: 3.5rem 0;
+    }
+
+    .section.alt {
+      background: #ffffff;
+    }
+
+    .section-header {
+      margin-bottom: 2.25rem;
+      text-align: left;
+    }
+
+    .section-kicker {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: #777;
+      margin-bottom: 0.35rem;
+    }
+
+    .section-title {
+      font-size: 1.7rem;
+      margin: 0 0 0.75rem;
+      color: #162235;
+    }
+
+    .section-subtitle {
+      max-width: 640px;
+      font-size: 0.98rem;
+      color: #555;
+    }
+
+    /* --- Media --- */
+    .media-frame {
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid #b6c3d8;
+      background: #f0f4fb;
+    }
+
+    .media-frame img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .media-caption {
+      padding: 0.6rem 0.9rem 0.8rem;
+      font-size: 0.82rem;
+      color: #4b5563;
+      background: #f9fbff;
+    }
+
+    /* --- Grids & Cards --- */
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.75rem;
+    }
+
+    .card {
+      background: #ffffff;
+      border-radius: 14px;
+      border: 1px solid rgba(13, 27, 62, 0.06);
+      box-shadow: 0 12px 32px rgba(15, 23, 42, 0.04);
+      padding: 1.4rem 1.4rem 1.35rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.55rem;
+    }
+
+    .card-header-label {
+      font-size: 0.75rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #7c8baa;
+    }
+
+    .card-title {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: #182235;
+    }
+
+    .card-body {
+      font-size: 0.92rem;
+      color: #555;
+    }
+
+    .card-list {
+      margin: 0.35rem 0 0;
+      padding-left: 1.1rem;
+      font-size: 0.9rem;
+      color: #4b566f;
+    }
+
+    .card-list li {
+      margin-bottom: 0.25rem;
+    }
+
+    /* --- Two-column feature sections --- */
+    .two-column {
+      display: grid;
+      grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.9fr);
+      gap: 2.5rem;
+      align-items: flex-start;
+    }
+
+    .two-column.reverse {
+      grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.15fr);
+    }
+
+    .feature-tag {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: #0073b6;
+      margin-bottom: 0.3rem;
+    }
+
+    .feature-title {
+      font-size: 1.4rem;
+      color: #111827;
+      margin: 0 0 0.6rem;
+    }
+
+    .feature-subtitle {
+      font-size: 0.96rem;
+      color: #4b5563;
+      margin-bottom: 0.9rem;
+    }
+
+    .feature-list {
+      margin: 0.5rem 0 0.4rem;
+      padding-left: 1.1rem;
+      font-size: 0.93rem;
+      color: #4b5563;
+    }
+
+    .feature-list li {
+      margin-bottom: 0.25rem;
+    }
+
+    .feature-meta {
+      margin-top: 0.75rem;
+      font-size: 0.85rem;
+      color: #6b7280;
+    }
+
+    /* --- Process Steps --- */
+    .process-steps {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.75rem;
+    }
+
+    .process-step {
+      background: #ffffff;
+      border-radius: 14px;
+      border: 1px solid rgba(13, 27, 62, 0.06);
+      padding: 1.3rem 1.3rem 1.2rem;
+      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.05);
+      position: relative;
+    }
+
+    .process-step-number {
+      width: 32px;
+      height: 32px;
+      border-radius: 999px;
+      background: #005b8f;
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 0.6rem;
+    }
+
+    .process-step-title {
+      font-size: 1.02rem;
+      font-weight: 600;
+      margin-bottom: 0.45rem;
+      color: #111827;
+    }
+
+    .process-step-body {
+      font-size: 0.9rem;
+      color: #4b5563;
+    }
+
+    /* --- Use Cases --- */
+    .use-cases {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.75rem;
+    }
+
+    .use-case-title {
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+      color: #111827;
+    }
+
+    .pill-label {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.1rem 0.7rem;
+      border-radius: 999px;
+      background: #edf5ff;
+      color: #005b8f;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 0.35rem;
+    }
+
+    /* --- CTA --- */
+    .cta-section {
+      text-align: center;
+    }
+
+    .cta-box {
+      background: radial-gradient(circle at top left, #e6f5ff, #f8fafc);
+      border-radius: 18px;
+      border: 1px solid rgba(148, 163, 184, 0.3);
+      padding: 2.2rem 1.75rem 2rem;
+      box-shadow: 0 20px 40px rgba(15, 23, 42, 0.08);
+    }
+
+    .cta-title {
+      font-size: 1.6rem;
+      margin-bottom: 0.7rem;
+      color: #0f172a;
+    }
+
+    .cta-subtitle {
+      max-width: 560px;
+      margin: 0 auto 1.7rem;
+      font-size: 0.97rem;
+      color: #4b5563;
+    }
+
+    .cta-actions {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.9rem;
+    }
+
+    .cta-note {
+      margin-top: 1.1rem;
+      font-size: 0.85rem;
+      color: #6b7280;
+    }
+
+    /* --- Footer --- */
+    footer {
+      border-top: 1px solid rgba(148, 163, 184, 0.35);
+      padding: 1.5rem 0 1.75rem;
+      background: #ffffff;
+      font-size: 0.82rem;
+      color: #6b7280;
+    }
+
+    .footer-inner {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 0.75rem;
+      align-items: center;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    /* --- Responsive --- */
+    @media (max-width: 900px) {
+      .two-column,
+      .two-column.reverse,
+      .grid-3,
+      .process-steps,
+      .use-cases {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .hero-inner {
+        padding: 3.5rem 0 3.25rem;
+      }
+
+      .nav-links {
+        display: none; /* simple mobile behavior */
+      }
+    }
+
+    @media (max-width: 600px) {
+      .hero-title {
+        font-size: 1.9rem;
+      }
+
+      .hero-subtitle {
+        font-size: 0.97rem;
+      }
+
+      .cta-box {
+        padding: 1.9rem 1.4rem 1.7rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ================= Header ================= -->
+  <header class="site-header">
+    <div class="container nav">
+      <div class="nav-left">
+        <img
+          src="https://img1.wsimg.com/isteam/ip/0815fdc9-aafc-4fe1-99f8-dedc9ba0e23b/blob-f3ca1db.png/:/rs=w:331,h:400,cg:true,m/cr=w:331,h:400/qt=q:95"
+          alt="Accel Analysis, LLC Logo"
+          class="nav-logo"
+        />
+        <div class="nav-brand-text">
+          Accel Analysis, LLC<br />
+          <span style="font-weight:600;">Clarity. Strategy. Execution.</span>
+        </div>
+      </div>
+
+      <nav class="nav-links">
+        <a href="#who-we-serve" class="nav-link">Who We Serve</a>
+        <a href="#positioning" class="nav-link">Positioning &amp; Offers</a>
+        <a href="#client-radar" class="nav-link">Ideal Client Radar</a>
+        <a href="#process" class="nav-link">How It Works</a>
+        <a href="#cta" class="nav-cta">Book a Discovery</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ================= Hero ================= -->
+  <section class="hero">
+    <div class="container hero-inner">
+      <div class="hero-tagline">Industry Sector &mdash; Professional &amp; Technical Services</div>
+      <h1 class="hero-title">
+        Turn Your Expertise into a
+        <span class="hero-accent">Clear, Consistent Client Pipeline</span>
+      </h1>
+      <p class="hero-subtitle">
+        Accel Analysis helps home-based consultants, creatives, and professional practices get
+        sharper on who they serve, how they package their services, and how to reach the right
+        clients in the local market.
+      </p>
+
+      <div class="hero-pill">
+        <span>Consultants &amp; advisors in business, technical, and scientific fields</span>
+        <span>Design, photography, and creative studios</span>
+        <span>Legal, accounting, engineering &amp; other licensed practices</span>
+      </div>
+
+      <div class="hero-actions">
+        <a
+          href="https://outlook.office.com/book/AccelAnalysis1%40NETORGFT15328873.onmicrosoft.com/s/Oru7j85iDEifvq8QNV5DjQ2?ismsaljsauthenabled="
+          class="btn-primary"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Book a Discovery Meeting
+        </a>
+        <a href="#who-we-serve" class="btn-secondary">
+          Explore Professional Support
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <main>
+    <!-- ================= Section: Who We Serve ================= -->
+    <section class="section alt" id="who-we-serve">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-kicker">Who We Serve</div>
+          <h2 class="section-title">The Professional &amp; Technical Firms in Focus</h2>
+          <p class="section-subtitle">
+            The data in Isle of Wight County shows a strong concentration of management consulting,
+            design, photography, legal, notary, accounting, architecture, engineering,
+            environmental and IT-related firms &mdash; many of them home-based. We build around
+            that reality.
+          </p>
+        </div>
+
+        <div class="grid-3">
+          <div class="card">
+            <div class="card-header-label">01</div>
+            <div class="card-title">Consultants &amp; Advisory Practices</div>
+            <div class="card-body">
+              Strategy, management, marketing, scientific, technical, and environmental consultants
+              who live on their ability to translate expertise into results.
+              <ul class="card-list">
+                <li>Clarify specialization and differentiators</li>
+                <li>Design offer ladders that match how clients buy</li>
+                <li>Target organizations where your expertise is a high-fit</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header-label">02</div>
+            <div class="card-title">Creatives, Designers &amp; Studios</div>
+            <div class="card-body">
+              Graphic and interior designers, specialized design firms, portrait and commercial
+              photographers who want to move beyond one-off jobs.
+              <ul class="card-list">
+                <li>Package services for recurring work and retainers</li>
+                <li>Map and reach ideal local business and family clients</li>
+                <li>Highlight the right portfolio stories in campaigns</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header-label">03</div>
+            <div class="card-title">Professional Practices &amp; Technical Firms</div>
+            <div class="card-body">
+              Legal and notary offices, accounting and bookkeeping firms, architects, engineers,
+              surveyors, IT and custom software shops.
+              <ul class="card-list">
+                <li>Define your “sweet spot” client and case/project mix</li>
+                <li>Blend referral, partner, and direct outreach strategies</li>
+                <li>Use simple metrics to see which channels are working</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Media: overview -->
+        <div style="margin-top:1.75rem;">
+          <div class="media-frame">
+            <img
+              src="https://via.placeholder.com/1120x520?text=Professional+Services+Collage+Mock"
+              alt="Professional services collage mock"
+            />
+          </div>
+          <div class="media-caption">
+            Mock image &mdash; replace with a collage or hero image showing consultants, designers,
+            and professional practices at work.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= Section: Core Value Props ================= -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-kicker">Why Professional Firms Work with Accel</div>
+          <h2 class="section-title">Less Guessing, More Deliberate Growth</h2>
+          <p class="section-subtitle">
+            Most solo and micro professional firms are strong on expertise but stretched thin on
+            positioning, targeting, and systems. We help you bring structure without losing the
+            flexibility that makes you good at what you do.
+          </p>
+        </div>
+
+        <div class="grid-3">
+          <div class="card">
+            <div class="card-title">Positioning &amp; Offer Blueprint</div>
+            <div class="card-body">
+              Get clear on who you serve, what problems you solve, and how your services are
+              packaged and priced.
+              <ul class="card-list">
+                <li>Specialization and “sweet spot” mapping</li>
+                <li>Service packages that reflect real client needs</li>
+                <li>Messaging that speaks to outcomes, not jargon</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-title">Ideal Client Radar&#8482;</div>
+            <div class="card-body">
+              Use local and regional data to identify the organizations and households most likely
+              to value and pay for your work.
+              <ul class="card-list">
+                <li>Target lists by industry, size, and location</li>
+                <li>Maps that show where high-fit clients are concentrated</li>
+                <li>Simple prioritization for outreach and relationship-building</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-title">Lightweight Pipelines &amp; Systems</div>
+            <div class="card-body">
+              A practical, right-sized way to track leads, proposals, and relationships without
+              turning your practice into a CRM admin job.
+              <ul class="card-list">
+                <li>Basic pipeline design and status stages</li>
+                <li>Rhythms for follow-up and check-ins</li>
+                <li>Signals to know when it’s time to adjust offers or targeting</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Media: analytics -->
+        <div style="margin-top:1.75rem;">
+          <div class="media-frame">
+            <img
+              src="https://via.placeholder.com/1120x520?text=Professional+Pipeline+Dashboard+Mock"
+              alt="Professional pipeline dashboard mock"
+            />
+          </div>
+          <div class="media-caption">
+            Mock image &mdash; replace with a dashboard view showing lead sources, proposals, and
+            booked projects for professional firms.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= Section: Positioning & Offers ================= -->
+    <section class="section alt" id="positioning">
+      <div class="container two-column">
+        <div>
+          <div class="feature-tag">Service Pillar</div>
+          <h2 class="feature-title">Positioning &amp; Offer Architecture</h2>
+          <p class="feature-subtitle">
+            When your expertise is broad, it’s easy for your message to get fuzzy. We help you
+            focus your positioning and build offers that make it easy for clients to say “yes.”
+          </p>
+
+          <ul class="feature-list">
+            <li><strong>Specialization Clarification:</strong> Sort through the services you <em>can</em> provide and define the ones you <em>should</em> lead with.</li>
+            <li><strong>Offer Design:</strong> Create service tiers, retainers, and project packages that align with how your clients actually buy.</li>
+            <li><strong>Pricing Strategy:</strong> Use value, effort, and local market context to guide pricing &mdash; not just “what others charge.”</li>
+            <li><strong>Message &amp; Story:</strong> Translate technical work into language that resonates with decision-makers and end-users.</li>
+          </ul>
+
+          <p class="feature-meta">
+            Deliverable: a positioning and offer blueprint you can use on your website, proposals,
+            outreach, and conversations.
+          </p>
+        </div>
+
+        <div>
+          <div class="media-frame">
+            <img
+              src="https://via.placeholder.com/800x450?text=Positioning+Workshop+Mock"
+              alt="Positioning workshop mock"
+            />
+          </div>
+          <div class="media-caption">
+            Mock image &mdash; replace with a visual of a strategy session or whiteboard mapping
+            offers and ideal clients.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= Section: Ideal Client Radar ================= -->
+    <section class="section" id="client-radar">
+      <div class="container two-column reverse">
+        <div>
+          <div class="media-frame">
+            <img
+              src="https://via.placeholder.com/800x450?text=Ideal+Client+Map+Mock"
+              alt="Ideal client map mock"
+            />
+          </div>
+          <div class="media-caption">
+            Mock image &mdash; replace with a map or list view showing clusters of high-fit
+            businesses and organizations in your service radius.
+          </div>
+        </div>
+
+        <div>
+          <div class="feature-tag">Service Pillar</div>
+          <h2 class="feature-title">Ideal Client Radar&#8482; &amp; Outreach</h2>
+          <p class="feature-subtitle">
+            Instead of broadcasting to everyone, we use data to point your limited time and
+            marketing budget toward the clients who are most likely to value your expertise.
+          </p>
+
+          <ul class="feature-list">
+            <li><strong>Ideal Client Profiles:</strong> Define by industry, size, geography, and problem set.</li>
+            <li><strong>Local Data &amp; Lists:</strong> Build curated lists of organizations, partners, and households aligned with those profiles.</li>
+            <li><strong>Outreach Design:</strong> Invitation-style emails, mail, and relationship plays (not spam) to start conversations.</li>
+            <li><strong>Feedback &amp; Iteration:</strong> See which profiles respond and refine who gets your attention next quarter.</li>
+          </ul>
+
+          <p class="feature-meta">
+            Result: a clearer, more focused list of “who we’re trying to reach” and a way to
+            actually reach them consistently.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= Section: How It Works ================= -->
+    <section class="section alt" id="process">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-kicker">How Engagements Work</div>
+          <h2 class="section-title">Built Around Your Practice, Not Someone Else’s Template</h2>
+          <p class="section-subtitle">
+            Whether you’re a solo consultant, a small studio, or a professional firm with a few
+            staff, we keep the process focused and practical.
+          </p>
+        </div>
+
+        <div class="process-steps">
+          <div class="process-step">
+            <div class="process-step-number">1</div>
+            <div class="process-step-title">Clarify Goals &amp; Current State</div>
+            <div class="process-step-body">
+              We listen first: your services, clients, pricing, capacity, and the realities of
+              your local market. Together we define what “better” looks like over the next 6–18 months.
+            </div>
+          </div>
+
+          <div class="process-step">
+            <div class="process-step-number">2</div>
+            <div class="process-step-title">Design Positioning, Offers &amp; Client Radar</div>
+            <div class="process-step-body">
+              We use your expertise plus local business data to tighten your positioning, design or
+              refine offers, and build your Ideal Client Radar and outreach plan.
+            </div>
+          </div>
+
+          <div class="process-step">
+            <div class="process-step-number">3</div>
+            <div class="process-step-title">Launch, Learn &amp; Adjust</div>
+            <div class="process-step-body">
+              We support light execution and review cycles so you can see what’s working, capture
+              wins, and adjust your mix of services, pricing, and targeting.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= Section: Use Cases ================= -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-kicker">Real-World Scenarios</div>
+          <h2 class="section-title">Where This Creates Immediate Value</h2>
+          <p class="section-subtitle">
+            These are typical ways home-based professional and technical firms use Accel’s support
+            to move from “referrals only and word of mouth” to a clearer, more intentional growth path.
+          </p>
+        </div>
+
+        <div class="use-cases">
+          <div>
+            <div class="pill-label">For Solo &amp; Micro Firms</div>
+            <h3 class="use-case-title">From “I Do a Bit of Everything” to a Focused Practice</h3>
+            <ul class="feature-list">
+              <li>Clarify your primary service line and ideal client set.</li>
+              <li>Package your work so clients understand exactly how to engage you.</li>
+              <li>Use a simple list and follow-up rhythm to keep conversations moving.</li>
+              <li>Know which marketing experiments to keep and which to drop.</li>
+            </ul>
+          </div>
+
+          <div>
+            <div class="pill-label">For Growing Firms &amp; Studios</div>
+            <h3 class="use-case-title">Aligning Team Capacity with the Right Kind of Demand</h3>
+            <ul class="feature-list">
+              <li>Balance one-off projects with retainer and recurring work.</li>
+              <li>Target industries and clients that match your strengths and margins.</li>
+              <li>Give your team clarity on who you serve and how to talk about it.</li>
+              <li>Use light-weight reporting to communicate progress to owners or partners.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div style="margin-top:1.75rem;">
+          <div class="media-frame">
+            <img
+              src="https://via.placeholder.com/1120x520?text=Consultant+and+Client+Meeting+Mock"
+              alt="Consultant and client meeting mock"
+            />
+          </div>
+          <div class="media-caption">
+            Mock image &mdash; replace with a photo of a professional meeting with a client, or a
+            working session in a local space or coworking environment.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= Section: CTA ================= -->
+    <section class="section cta-section" id="cta">
+      <div class="container">
+        <div class="cta-box">
+          <h2 class="cta-title">Ready to Put More Structure Around Your Expertise?</h2>
+          <p class="cta-subtitle">
+            Whether you’re a consultant, designer, photographer, or professional practice,
+            Accel Analysis can help you clarify your positioning, focus your outreach, and build
+            a more predictable flow of the right work.
+          </p>
+
+          <div class="cta-actions">
+            <a
+              href="https://outlook.office.com/book/AccelAnalysis1%40NETORGFT15328873.onmicrosoft.com/s/Oru7j85iDEifvq8QNV5DjQ2?ismsaljsauthenabled="
+              class="btn-primary"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Book a Discovery Meeting
+            </a>
+            <a
+              href="https://accelanalysis.com/contact-us"
+              class="btn-secondary"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Contact Accel Analysis
+            </a>
+          </div>
+
+          <div class="cta-note">
+            Not sure where to start? We can begin with a positioning and Ideal Client Radar session
+            focused on your highest-potential services and markets.
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ================= Footer ================= -->
+  <footer>
+    <div class="container footer-inner">
+      <div>
+        &copy; <span id="year"></span> Accel Analysis, LLC. All rights reserved.
+      </div>
+      <div class="footer-links">
+        <a href="https://accelanalysis.com" target="_blank" rel="noopener noreferrer">AccelAnalysis.com</a>
+        <a href="https://accelanalysis.com/services-overview" target="_blank" rel="noopener noreferrer">Services Overview</a>
+        <a href="https://accelanalysis.com/contact-us" target="_blank" rel="noopener noreferrer">Contact Us</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Set current year in footer
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
